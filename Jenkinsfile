@@ -11,7 +11,8 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh 'podman build -t $IMAGE_NAME .'
+                sh 'podman build --format docker -t $IMAGE_NAME .'
+                */sh 'podman build -t $IMAGE_NAME .'*/
             }
         }
 
