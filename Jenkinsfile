@@ -7,13 +7,7 @@ pipeline {
         PORT = "8081"
     }
 
-    /*stages {
-
-        stage('Clone Code') {
-            steps {
-                git 'git@github.com:manju9945290649/flask-ci-cd.git'
-            }
-        } */
+    stages {
 
         stage('Build Image') {
             steps {
@@ -44,4 +38,4 @@ pipeline {
             }
         }
     }
-
+}
