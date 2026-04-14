@@ -25,10 +25,11 @@ pipeline {
             }
         }
 
-        stage('Run Container') {
+       stage('Run Container') {
     steps {
         sh '''
         podman rm -f $CONTAINER_NAME || true
+        fuser -k 8081/tcp || true
         podman run -d -p $PORT:5000 --name $CONTAINER_NAME $IMAGE_NAME
         '''
     }
