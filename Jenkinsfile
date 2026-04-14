@@ -26,12 +26,13 @@ pipeline {
         }
 
         stage('Run Container') {
-            steps {
-                sh '''
-                podman run -d -p $PORT:5000 --name $CONTAINER_NAME $IMAGE_NAME
-                '''
-            }
-        }
+    steps {
+        sh '''
+        podman rm -f $CONTAINER_NAME || true
+        podman run -d -p $PORT:5000 --name $CONTAINER_NAME $IMAGE_NAME
+        '''
+    }
+}
 
         stage('Test API') {
             steps {
