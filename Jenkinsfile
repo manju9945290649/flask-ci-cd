@@ -37,6 +37,7 @@ pipeline {
 
         stage('Test API') {
             steps {
+                sleep 5
                 sh 'curl http://localhost:$PORT/hello'
             }
         }
