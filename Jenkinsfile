@@ -11,7 +11,7 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/<your-username>/<repo>.git'
+                git 'git@github.com:manju9945290649/flask-ci-cd.git'
             }
         }
 
